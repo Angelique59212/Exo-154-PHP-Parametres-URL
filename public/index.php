@@ -30,4 +30,3 @@ function getPage(String $pageName, String $title):void {
  * Créez au moins 10 liens à l'aide d'une boucle !!!
  * Pour chaque lien, le paramètre iteration prendra la valeur actuelle de votre variable de boucle ( $i par exemple ).
  */
-
