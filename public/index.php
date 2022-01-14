@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Exo 1
  * ------
@@ -11,6 +10,18 @@
 
 // TODO Votre code ici.
 
+$page = $_GET['p'] ?? 'home';
+$page = strip_tags($page);
+getPage(
+    sprintf(__DIR__ ."/../%s.php", strtolower($page)),
+    $page
+);
+
+function getPage(String $pageName, String $title):void {
+    require __DIR__ .'/../partial/header.php';
+    require file_exists($pageName) ? $pageName:__DIR__ .'/../404.php';
+    require __DIR__ .'/../partial/footer.php';
+}
 
 /**
  * Exo 2
@@ -19,8 +30,4 @@
  * Créez au moins 10 liens à l'aide d'une boucle !!!
  * Pour chaque lien, le paramètre iteration prendra la valeur actuelle de votre variable de boucle ( $i par exemple ).
  */
-
-
-
-
 
